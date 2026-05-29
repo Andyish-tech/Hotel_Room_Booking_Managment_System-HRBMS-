@@ -304,4 +304,4 @@ Then log in at http://localhost:3000/login with:
 
 ## 📄 License
 
-This project is for academic purposes — National Practical Exam 2026.
+This project is for academic purposes — National Practical Exam
