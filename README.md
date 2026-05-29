@@ -153,7 +153,7 @@
 
 ```bash
 git clone <repository-url>
-cd ISHIMWE_Andy_National_Practical_Exam_2026
+cd Hotel_Room_Booking_Managment_System-HRBMS-
 ```
 
 ### 2. Database Setup
