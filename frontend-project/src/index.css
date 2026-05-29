@@ -1,0 +1,427 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white text-black font-sans antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-brand hover:bg-yellow-500 text-black font-medium py-2.5 px-6 rounded-lg 
+           transition-all duration-200 shadow-md hover:shadow-lg 
+           disabled:opacity-50 disabled:cursor-not-allowed
+           focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2.5 px-6 rounded-lg 
+           transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2;
+  }
+
+  .btn-danger {
+    @apply bg-red-600 hover:bg-red-700 text-white font-medium py-2.5 px-6 rounded-lg 
+           transition-all duration-200 shadow-md hover:shadow-lg
+           focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2;
+  }
+
+  .btn-success {
+    @apply bg-brand hover:bg-yellow-500 text-black font-medium py-2.5 px-6 rounded-lg 
+           transition-all duration-200 shadow-md hover:shadow-lg
+           focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2.5 border border-gray-300 rounded-lg 
+           focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand
+           transition-all duration-200 bg-white
+           placeholder:text-gray-400 text-black;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-200 p-6 
+           transition-all duration-200 hover:shadow-md;
+  }
+
+  .form-label {
+    @apply block text-sm font-semibold text-black mb-1.5;
+  }
+
+  .page-title {
+    @apply text-2xl font-bold text-black mb-6;
+  }
+
+  .stat-card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-200 p-6 
+           transition-all duration-200 hover:shadow-md 
+           flex items-center gap-4;
+  }
+
+  .table-header {
+    @apply bg-black text-white text-xs font-semibold uppercase tracking-wider;
+  }
+
+  .table-cell {
+    @apply px-6 py-4 whitespace-nowrap text-sm text-black;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .badge-success {
+    @apply badge bg-brand text-black;
+  }
+
+  .badge-warning {
+    @apply badge bg-brand text-black;
+  }
+
+  .badge-danger {
+    @apply badge bg-red-600 text-white;
+  }
+
+  .badge-info {
+    @apply badge bg-gray-200 text-black;
+  }
+}
+
+/* ============================================================
+   Toast Notification Styles — Professional & Branded
+   ============================================================ */
+
+.toast-container {
+  --toastify-toast-width: 380px;
+  --toastify-toast-offset: 16px;
+}
+
+.custom-toast-wrapper {
+  padding: 0 !important;
+  margin-bottom: 12px !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12) !important;
+}
+
+.custom-toast-body {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.custom-toast {
+  display: flex;
+  align-items: center;
+  padding: 14px 18px;
+  min-height: 52px;
+  border-radius: 12px;
+  font-family: inherit;
+  position: relative;
+}
+
+/* Brand-colored left accent bar */
+.custom-toast::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 4px;
+  border-radius: 0 2px 2px 0;
+}
+
+/* Toast type variations — compound selectors since classes share the same element */
+.toast-success.custom-toast {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  color: white;
+}
+.toast-success.custom-toast::before {
+  background: #34d399;
+}
+
+.toast-error.custom-toast {
+  background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+  color: white;
+}
+.toast-error.custom-toast::before {
+  background: #fca5a5;
+}
+
+.toast-warning.custom-toast {
+  background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+  color: white;
+}
+.toast-warning.custom-toast::before {
+  background: #fcd34d;
+}
+
+.toast-info.custom-toast {
+  background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
+  color: white;
+}
+.toast-info.custom-toast::before {
+  background: #93c5fd;
+}
+
+/* Progress bar — white, semi-transparent on dark bg */
+.custom-toast-wrapper .Toastify__progress-bar {
+  height: 3px !important;
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+
+.custom-toast-wrapper .Toastify__progress-bar--wrp {
+  height: 3px !important;
+  background: transparent !important;
+}
+
+/* Progress bar track only shows for colored theme; we style it directly */
+.custom-toast-wrapper .Toastify__progress-bar--success {
+  background: rgba(255, 255, 255, 0.6) !important;
+}
+.custom-toast-wrapper .Toastify__progress-bar--error {
+  background: rgba(255, 255, 255, 0.6) !important;
+}
+.custom-toast-wrapper .Toastify__progress-bar--warning {
+  background: rgba(255, 255, 255, 0.6) !important;
+}
+.custom-toast-wrapper .Toastify__progress-bar--info {
+  background: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* ============================================================
+   Print Styles — Professional bill & report printing
+   ============================================================ */
+@media print {
+  /* ===== PAGE SETUP ===== */
+  @page {
+    margin: 18mm 15mm;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    font-family: 'Times New Roman', Georgia, serif !important;
+    font-size: 11pt !important;
+    line-height: 1.5 !important;
+  }
+
+  /* ===== HIDE NON-ESSENTIAL ELEMENTS ===== */
+  aside,
+  header,
+  .Toastify,
+  button,
+  select,
+  input,
+  textarea,
+  main .flex.gap-1.bg-gray-200,
+  [class*="bg-gradient-to-r"],
+  main .card:not(:last-child):has(select),
+  main .card:has(input[type="date"]),
+  main [class*="grid-cols-1"][class*="sm:grid-cols-3"] {
+    display: none !important;
+  }
+
+  /* ===== LAYOUT RESET ===== */
+  main {
+    margin-left: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    width: 100% !important;
+  }
+
+  .min-h-screen {
+    display: block !important;
+  }
+
+  /* ===== BILL/REPORT CONTAINER ===== */
+  main .card.border-2,
+  main > div > div:last-child > div:last-child {
+    display: block !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    page-break-inside: avoid;
+    background: white !important;
+  }
+
+  /* Force visibility of bill/report content */
+  main .card.border-2 *,
+  main > div > div:last-child > div:last-child * {
+    visibility: visible !important;
+  }
+
+  /* ===== SECTION HEADINGS ===== */
+  h2, h3, h4 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  h2 {
+    font-size: 18pt !important;
+    text-align: center !important;
+    margin-bottom: 16pt !important;
+    border-bottom: 2px solid black !important;
+    padding-bottom: 8pt !important;
+  }
+
+  h3 {
+    font-size: 14pt !important;
+    margin: 12pt 0 6pt !important;
+  }
+
+  h4 {
+    font-size: 11pt !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    margin: 8pt 0 4pt !important;
+  }
+
+  /* ===== TABLES ===== */
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+    margin: 8pt 0 !important;
+    font-size: 10pt !important;
+  }
+
+  thead {
+    display: table-header-group !important;
+  }
+
+  tfoot {
+    display: table-footer-group !important;
+  }
+
+  th {
+    background-color: #000 !important;
+    color: white !important;
+    font-weight: bold !important;
+    padding: 6pt 8pt !important;
+    border: 1px solid #333 !important;
+    text-align: left !important;
+    text-transform: uppercase !important;
+    font-size: 9pt !important;
+  }
+
+  td {
+    padding: 5pt 8pt !important;
+    border: 1px solid #999 !important;
+    vertical-align: top !important;
+  }
+
+  tr {
+    page-break-inside: avoid !important;
+  }
+
+  tbody tr:last-child td {
+    border-bottom: 2px solid #333 !important;
+  }
+
+  /* ===== BILL HEADER ===== */
+  .text-center.border-b {
+    text-align: center !important;
+    border-bottom: 2px solid #000 !important;
+    padding-bottom: 12pt !important;
+    margin-bottom: 12pt !important;
+  }
+
+  .text-center.border-b svg,
+  .w-16.h-16,
+  .rounded-2xl.flex.items-center.justify-center {
+    display: none !important;
+  }
+
+  .text-center.border-b h3 {
+    font-size: 20pt !important;
+    font-weight: bold !important;
+    margin: 0 0 4pt !important;
+    letter-spacing: 2pt !important;
+  }
+
+  .text-center.border-b p {
+    font-size: 10pt !important;
+    margin: 2pt 0 !important;
+  }
+
+  .text-center.border-b .text-sm {
+    font-size: 11pt !important;
+    font-weight: bold !important;
+    letter-spacing: 1pt !important;
+  }
+
+  /* ===== INFO GRID ===== */
+  .grid.grid-cols-1.md\:grid-cols-2 {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8pt !important;
+    margin-bottom: 8pt !important;
+  }
+
+  .grid.grid-cols-1.md\:grid-cols-2 > div {
+    flex: 1 1 45% !important;
+  }
+
+  .grid.grid-cols-1.sm\:grid-cols-3 {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8pt !important;
+  }
+
+  .grid.grid-cols-1.sm\:grid-cols-3 > div {
+    flex: 1 1 30% !important;
+  }
+
+  /* ===== BADGES/LABELS ===== */
+  .bg-brand {
+    background-color: #EFBF04 !important;
+    color: black !important;
+  }
+
+  /* ===== TERMS & FOOTER ===== */
+  .pt-4.border-t {
+    border-top: 1px solid #ccc !important;
+    padding-top: 8pt !important;
+    margin-top: 12pt !important;
+  }
+
+  /* Prevent orphaned content */
+  p, li, .space-y-2 > div {
+    page-break-inside: avoid;
+  }
+
+  /* Ensure proper spacing */
+  .space-y-6 > * {
+    margin-bottom: 6pt !important;
+  }
+
+  /* Remove hover backgrounds */
+  tr.hover\:bg-yellow-200 {
+    background: transparent !important;
+  }
+
+  /* Inline flex items */
+  .flex.items-center.gap-2 {
+    display: flex !important;
+    align-items: center !important;
+    gap: 4pt !important;
+  }
+
+  /* Text sizing */
+  .text-lg { font-size: 12pt !important; }
+  .text-sm { font-size: 10pt !important; }
+  .text-xs { font-size: 9pt !important; }
+  .text-2xl { font-size: 18pt !important; }
+
+  /* Ensure all text is black */
+  .text-black, .text-black\/70, .text-black\/80, .text-gray-500, .text-gray-600, .text-gray-700, .text-gray-900 {
+    color: black !important;
+  }
+}
